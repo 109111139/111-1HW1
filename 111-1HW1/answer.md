@@ -23,9 +23,15 @@
 下段程式碼則為使用後結果：
 
 ```csharp
-public void mt_getResult(){
-    ...
-}
+protected void Page_Load(object sender, EventArgs e)
+        {
+            Response.Write("Hello App");
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Write("Hello Button");
+        }
 ```
 
 若要於內文中標示部分.aspx檔，則使用以下標籤` ```html 程式碼 ``` `，
@@ -44,6 +50,7 @@ public void mt_getResult(){
 <body>
     <form id="form1" runat="server">
         <div>
+        <asp:Button ID="btn_Show" runat="server" Text="Button" OnClick="Button1_Click" />
         </div>
     </form>
 </body>
